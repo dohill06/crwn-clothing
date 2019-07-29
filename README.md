@@ -1,3 +1,8 @@
+## E-commerce app with Redux, Hooks, GraphQL, ContextAPI, Stripe and Firebase
+
+Live demo is here: https://crwn-portfolio.herokuapp.com/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
