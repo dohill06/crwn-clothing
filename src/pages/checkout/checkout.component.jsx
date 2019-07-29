@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
@@ -37,12 +38,19 @@ const CheckoutPage = ({ cartItems, total }) => (
     <div className="total">
       <span>TOTAL: ${total}</span>
     </div>
-    <div className='test-warning'>
-      *Please use the following test credit card for payments*
-      <br />
-      4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
-    </div>
-    <StripeCheckoutButton price={total} />
+    {cartItems.length ? (
+      <>
+        <div className="test-warning">
+          *Please use the following test credit card for payments*
+          <br />
+          4242 4242 4242 4242 - Exp: 01/20 - CVV: 123
+        </div>
+
+        <StripeCheckoutButton price={total} />
+      </>
+    ) : (
+      <Redirect to="/shop" />
+    )}
   </div>
 );
 
