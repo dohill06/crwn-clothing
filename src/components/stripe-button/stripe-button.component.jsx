@@ -7,7 +7,7 @@ const StripeCheckoutButton = ({ price }) => {
 
   const onToken = token => {
     console.log(token);
-    alert('Payment Successful');
+    alert(`Payment Successful. Your Confirmation Number is ${token.created}`);
   };
 
   return (
